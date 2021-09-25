@@ -1,4 +1,4 @@
-package com.github.nethra.tutorial1;
+package nethra.tutorial1;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -12,19 +12,18 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-public class ConsumerDemoConsumerGroup {
+public class ConsumerDemo {
     public static void main(String[] args) {
-        Logger logger = LoggerFactory.getLogger(ConsumerDemoConsumerGroup.class.getName());
+        Logger logger = LoggerFactory.getLogger(ConsumerDemo.class.getName());
         Properties properties = new Properties();
 
         String topic = "first_topic";
         String bootstrap_server = "localhost:9092";
-        String group_id = "my_fifth_application";
         // create consumer properties
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrap_server);
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, group_id);
+        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "my_fourth_application");
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         //create consumer

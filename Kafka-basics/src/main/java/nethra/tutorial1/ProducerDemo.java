@@ -1,4 +1,4 @@
-package com.github.nethra.tutorial1;
+package nethra.tutorial1;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
